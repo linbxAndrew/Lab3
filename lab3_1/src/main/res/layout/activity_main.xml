@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ListView
+        android:id="@+id/myList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--  设置背景为bg_border2，有了圆角，
+    本来设置背景颜色为灰色的，没用  -->
+    <Button
+        android:id="@+id/information"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_border2"
+        android:text="Null" />
+</LinearLayout>
