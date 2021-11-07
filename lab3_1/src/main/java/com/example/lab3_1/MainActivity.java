@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                设置文本。也不知道为什么，点了后都成了大写字母……
-                Button button=findViewById(R.id.information);
-                button.setText(names[position]);
+                Toast toast = Toast.makeText(MainActivity.this, names[position], Toast.LENGTH_SHORT);
+                toast.show();
 //                设置颜色。红的不太好看。
                 for (int i = 0; i < parent.getCount(); i++) {
                     View v = parent.getChildAt(i);
