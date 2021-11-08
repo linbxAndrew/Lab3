@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:stretchColumns="0,1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <ImageView
+        android:background="@drawable/header_logo" />
     <!-- 输入用户名的文本框 -->
     <EditText
         android:layout_width="match_parent"
@@ -15,4 +17,15 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword" />
+    <TableRow>
+<!--    将themes.xml中的parent改成Theme.MaterialComponents.DayNight.NoActionBar.Bridge    -->
+        <Button android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@color/grey"
+            android:text="Cancel" />
+        <Button android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@color/grey"
+            android:text="Sign in" />
+    </TableRow>
 </TableLayout>
