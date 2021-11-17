@@ -51,20 +51,6 @@ public class MainActivity extends AppCompatActivity {
         simpleAdapter = new SimpleAdapter(this, listItems, R.layout.simple_item, new String[] {"num"}, new int[] {R.id.num});
         listView.setAdapter(simpleAdapter);
 
-        System.out.println("setAdapter");
-        System.out.println("\n");
-        System.out.println("\n");
-        System.out.println("\n");
-        System.out.println(listView.getCount());
-        System.out.println(listView.getChildAt(0));
-        System.out.println("\n");
-        System.out.println("\n");
-        System.out.println("\n");
-
-//        listView.setAdapter(simpleAdapter);
-//        System.out.println("再 setAdapter");
-//        System.out.println(listView.getCount());
-//        System.out.println(listView.getChildAt(0));
 
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         listView.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
@@ -156,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void deleteSelectedItems() {
 
-        System.out.println("刚开始 " + arr);
-        System.out.println(listView.getChildAt(0));
         int i;
         for (i = listView.getCount() - 1; i >= 0; i--) {
             if (isChecked.get(i) == true) {
@@ -165,8 +149,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         listItems = createListItems();
-        System.out.println("listItems change");
-        System.out.println(listView.getChildAt(0));
 
         isChecked = new ArrayList<Boolean>();
         for (i = 0; i < listView.getCount() - num; i++) {
@@ -176,37 +158,10 @@ public class MainActivity extends AppCompatActivity {
         if (listItems.isEmpty() == true) {
             empty.setVisibility(View.VISIBLE);
         }
-        num = 0;
 
-        simpleAdapter.notifyDataSetChanged();
         simpleAdapter = new SimpleAdapter(context, listItems, R.layout.simple_item, new String[] {"num"}, new int[] {R.id.num});
-//        simpleAdapter.notifyDataSetChanged();
         listView.setAdapter(simpleAdapter);
-
-//        System.out.println("一切开始");
-//        System.out.println(listView.getChildAt(0));
-//
-//        simpleAdapter.notifyDataSetChanged();
-//        System.out.println("notify过了");
-//        System.out.println(listView.getCount());
-//        System.out.println(listView.getChildAt(0));
-//
-//        System.out.println("开始设置simple。但此时simple不变");
-//        listView.setAdapter(simpleAdapter);
-//        System.out.println(listView.getCount());
-//        System.out.println(listView.getChildAt(0));
-//
-//        simpleAdapter = new SimpleAdapter(context, listItems, R.layout.simple_item, new String[] {"num"}, new int[] {R.id.num});
-//
-//        simpleAdapter.notifyDataSetChanged();
-//        System.out.println("notify过了");
-//        System.out.println(listView.getCount());
-//        System.out.println(listView.getChildAt(0));
-//
-//        listView.setAdapter(simpleAdapter);
-//        System.out.println("再setAdapter");
-//        System.out.println(listView.getCount());
-//        System.out.println(listView.getChildAt(0));
+        num = 0;
     }
 
 }
